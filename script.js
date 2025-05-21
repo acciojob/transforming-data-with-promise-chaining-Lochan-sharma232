@@ -3,6 +3,7 @@ let user1=document.getElementById("ip");
 let user2=document.getElementById("btn");
 let user3=document.getElementById("output");
 
-btn.addEventListener("onclick",function({
-	
-}))
+btn.addEventListener("onclick",function(e){
+	e.preventDefault();
+	let myPromise=
+})
