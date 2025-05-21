@@ -5,5 +5,10 @@ let user3=document.getElementById("output");
 
 btn.addEventListener("onclick",function(e){
 	e.preventDefault();
-	let myPromise=
+	let myPromise=new Promise(function (resolve,reject){
+		setTimeout(function() {
+			output.textContent=`Result: ${number}`;
+			resolve(number);
+		},2000)//2second delay
+	})
 })
