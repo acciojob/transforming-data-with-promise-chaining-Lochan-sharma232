@@ -1,66 +1,56 @@
-const input=document.getElementById("ip");
-const output=document.getElementById("output");
-const btn=document.getElementById("btn");
-btn.addEventListener("click",()=>{
-
-const promise1=new Promise((resolve)=>{
-setTimeout(()=> {
-		resolve(Number(input.value));
-		},2000)//2second delay
-	});
-    promise1.then((num)=>{
-        output.textContent=`Result: ${num}`;       
-        return num;
+function clickHandler() {
+  let div = document.getElementById("output")
+  function promise1() {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+		  //alert(document.getElementById("ip").value)
+        resolve(document.getElementById("ip").value)
+      }, 2000)
     })
-      
-    .then((num) =>{
-    const promise2=new Promise((resolve)=>{
-          setTimeout(()=>{
-            resolve(num*2);
-          },1000);  
-    });
-    return promise2;
-})
-    .then((num)=>{
-    output.textContent=`Result: ${result}`;
-   return num;
+  }
+  function promise2(num){
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve(num*2)
+      }, 2000)
     })
-    .then((num)=>{
-        const promise3=new Promise((resolve)=>{
-    setTimeout(()=> {
-        resolve(num-3);
-    },1000);
-});
-return promise3;
-})
-    .then((num)=>{
-        output.textContent=`Result: ${result}`;
-        return num;
+  }
+  function promise3(num){
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve(num-3)
+      }, 1000)
     })
-    .then((num)=>{
-        const promise4=new Promise((resolve)=>{
-            setTimeout(()=> {
-                resolve(num/2);
-            },1000);
-        });
-        return promise4;
+  }
+  function promise4(num){
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve(num/2)
+      }, 1000)
     })
-    .then((num)=>{
-        output.textContent=`Result: ${result}`;
-        return num;
+  }
+  function promise5(num){
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve(num+10)
+      }, 1000)
     })
-    .then((num)=>{
-        const promise5=new Promise((resolve)=>{
-            setTimeout(()=> {
-                resolve(num+10);
-            },1000);
-        });
-        return promise5;
-    })
-    .then((num)=>{
-        output.textContent=`Final Result: ${result}`;
-    })
-    .catch((error)=>{
-        console.log(error);
-    });
-		});
+  }
+  promise1().then((res)=>{
+	  //alert(res)
+    div.textContent=`Result: ${res}`;
+    return promise2(res)
+  }).then((res)=>{
+    div.textContent=`Result: ${res}`;
+    return promise3(res)
+  }).then((res)=>{
+    div.textContent=`Result: ${res}`;
+    return promise4(res)
+  }).then((res)=>{
+    div.textContent=`Result: ${res}`;
+    return promise5(res)
+  }).then((res)=>{
+    div.textContent=`Final Result: ${res}`;
+    
+  })
+}
