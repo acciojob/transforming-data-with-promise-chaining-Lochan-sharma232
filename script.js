@@ -59,7 +59,7 @@ return promise3;
         return promise5;
     })
     .then((num)=>{
-        output.textContent=`Final Result:${num}`;
+        output.textContent=`Final Result: ${num}`;
     })
     .catch((error)=>{
         console.log(error);
