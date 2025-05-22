@@ -1,15 +1,16 @@
+
 document.getElementById("btn").addEventListener("click",function(e){
 const input=parseInt(document.getElementById("ip").value);
 if(isNaN(input)){
     alert("Please enter a valid number");
     return;
 }
-processInput(input)
-.then(result=>{
-    document.getElementById("output").innerHTML=`Result: ${result}`;
-})
+else{
+let =  processInput(input)
+}
 });
-function processInput(input){
+ function processInput(input){
+
 let myPromise=new Promise(function (resolve){
 		setTimeout(()=> {
 			console.log(`Result:${input}`);
@@ -48,9 +49,9 @@ let myPromise=new Promise(function (resolve){
     setTimeout(()=>{
         let result=value+10;
         console.log(`Final Result: ${result}`);
-    resolve(result);
+        document.getElementById("output").innerHTML=`Result: ${result}`;
+        resolve(result);
     },1000)
    });
-});
+})
 }
-processInput(10);
