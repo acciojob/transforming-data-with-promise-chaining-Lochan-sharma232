@@ -1,4 +1,3 @@
-
 document.getElementById("btn").addEventListener("click",function(e){
 const input=parseInt(document.getElementById("ip").value);
 if(isNaN(input)){
@@ -13,7 +12,7 @@ let =  processInput(input)
 
 let myPromise=new Promise(function (resolve){
 		setTimeout(()=> {
-			console.log(`Result:${input}`);
+			 document.getElementById("output").innerText=`Result: ${input}`;
 			resolve(input);
 		},2000)//2second delay
 	})
@@ -21,7 +20,7 @@ let myPromise=new Promise(function (resolve){
         return new Promise((resolve)=>{
             setTimeout(()=>{
                 let result=value-2;
-                console.log(`Result:${result}`);
+              document.getElementById("output").innerText=`Result: ${result}`;
                 resolve(result);
             },1000);
         })
@@ -30,7 +29,7 @@ let myPromise=new Promise(function (resolve){
         return new Promise((resolve)=>{
             setTimeout(()=>{
                 let result=value-3;
-                console.log(`Result:${result}`);
+                document.getElementById("output").innerText=`Result: ${result}`;
            resolve(result);
             },2000)
        });
@@ -39,7 +38,7 @@ let myPromise=new Promise(function (resolve){
     return new Promise((resolve)=>{
         setTimeout(()=>{
             let result=value/2;
-            console.log(`Result:${result}`);
+             document.getElementById("output").innerText=`Result: ${result}`;
             resolve(result);
         },2000)
     });
@@ -48,8 +47,8 @@ let myPromise=new Promise(function (resolve){
    return new Promise(resolve=>{
     setTimeout(()=>{
         let result=value+10;
-        console.log(`Final Result: ${result}`);
-	        document.getElementById('output').innerText=`Result: ${result}`;
+        
+        document.getElementById("output").innerText=`Result: ${result}`;
         resolve(result);
     },1000)
    });
