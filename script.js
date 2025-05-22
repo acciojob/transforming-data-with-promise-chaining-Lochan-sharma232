@@ -1,56 +1,67 @@
-document.getElementById("btn").addEventListener("click",function(e){
-const input=parseInt(document.getElementById("ip").value);
-if(isNaN(input)){
-    alert("Please enter a valid number");
-    return;
-}
-else{
-let =  processInput(input)
-}
-});
- function processInput(input){
+const input=document.getElementById("ip");
+const output=document.getElementById("output");
+const btn=document.getElementById("btn");
+btn.addEventListener("click",()=>{
 
-let myPromise=new Promise(function (resolve){
-		setTimeout(()=> {
-			 document.getElementById("output").innerText=`Result: ${input}`;
-			resolve(input);
+const promise1=new Promise((resolve)=>{
+setTimeout(()=> {
+			 //document.getElementById("output").innerText=`Result: ${input}`;
+			resolve(Number(input.value));
 		},2000)//2second delay
-	})
-    .then((value)=>{
-        return new Promise((resolve)=>{
-            setTimeout(()=>{
-                let result=value-2;
-              document.getElementById("output").innerText=`Result: ${result}`;
-                resolve(result);
-            },1000);
-        })
+	});
+    promise1.then((num)=>{
+        output.textContent=`Result:${num}`;       
+        return num;
     })
-       .then((value)=>{
-        return new Promise((resolve)=>{
-            setTimeout(()=>{
-                let result=value-3;
-                document.getElementById("output").innerText=`Result: ${result}`;
-           resolve(result);
-            },2000)
-       });
-      })
-.then((value)=>{
-    return new Promise((resolve)=>{
-        setTimeout(()=>{
-            let result=value/2;
-             document.getElementById("output").innerText=`Result: ${result}`;
-            resolve(result);
-        },2000)
+      
+    .then((num) =>{
+    const promise2=new Promise((resolve)=>{
+          setTimeout(()=>{
+            resolve(num*2);
+          },1000);  
     });
+    return promise2;
 })
-.then((value)=>{
-   return new Promise(resolve=>{
-    setTimeout(()=>{
-        let result=value+10;
-        
-        document.getElementById("output").innerText=`Result: ${result}`;
-        resolve(result);
-    },1000)
-   });
+    .then((num)=>{
+    output.textContent=`Result:${num}`;
+   return num;
+    })
+    .then((num)=>{
+        const promise3=new Promise((resolve)=>{
+    setTimeout(()=> {
+        resolve(num-3);
+    },1000);
+});
+return promise3;
 })
-}
+    .then((num)=>{
+        output.textContent=`Result:${num}`;
+        return num;
+    })
+    .then((num)=>{
+        const promise4=new Promise((resolve)=>{
+            setTimeout(()=> {
+                resolve(num/2);
+            },1000);
+        });
+        return promise4;
+    })
+    .then((num)=>{
+        output.textContent=`Result:${num}`;
+        return num;
+    })
+    .then((num)=>{
+        const promise5=new Promise((resolve)=>{
+            setTimeout(()=> {
+                resolve(num+10);
+            },1000);
+        });
+        return promise5;
+    })
+    .then((num)=>{
+        output.textContent=`Final Result:${num}`;
+    })
+    .catch((error)=>{
+        console.log(error);
+    });
+		});
