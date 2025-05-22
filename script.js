@@ -22,7 +22,7 @@ setTimeout(()=> {
     return promise2;
 })
     .then((num)=>{
-    output.textContent=`Result: ${num}`;
+    output.textContent=`Result: ${result}`;
    return num;
     })
     .then((num)=>{
@@ -34,7 +34,7 @@ setTimeout(()=> {
 return promise3;
 })
     .then((num)=>{
-        output.textContent=`Result: ${num}`;
+        output.textContent=`Result: ${result}`;
         return num;
     })
     .then((num)=>{
@@ -46,7 +46,7 @@ return promise3;
         return promise4;
     })
     .then((num)=>{
-        output.textContent=`Result: ${num}`;
+        output.textContent=`Result: ${result}`;
         return num;
     })
     .then((num)=>{
@@ -58,7 +58,7 @@ return promise3;
         return promise5;
     })
     .then((num)=>{
-        output.textContent=`Final Result: ${num}`;
+        output.textContent=`Final Result: ${result}`;
     })
     .catch((error)=>{
         console.log(error);
