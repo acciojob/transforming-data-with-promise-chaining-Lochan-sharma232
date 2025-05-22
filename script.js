@@ -16,7 +16,7 @@ new Promise(function (resolve){
 			resolve(number);
 		},2000)//2second delay
 	})
-    .then((value)=>{
+    .then(value=>{
         return new Promise((resolve)=>{
             setTimeout(()=>{
                 let number=value*2;
@@ -25,7 +25,7 @@ new Promise(function (resolve){
             },2000);
         });
 	})
-			.then((value)=>{
+			.then(value=>{
         return new Promise((resolve)=>{
             setTimeout(()=>{
                 let number=value-3;
@@ -34,7 +34,7 @@ new Promise(function (resolve){
             },1000)
        });
       })
-.then((value)=>{
+.then(value=>{
     return new Promise((resolve)=>{
         setTimeout(()=>{
             let number=value/2;
@@ -43,7 +43,7 @@ new Promise(function (resolve){
         },1000);
     });
 })
-.then((value)=>{
+.then(value=>{
    return new Promise(resolve=>{
     setTimeout(()=>{
         let number=value+10;
