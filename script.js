@@ -5,8 +5,7 @@ btn.addEventListener("click",()=>{
 
 const promise1=new Promise((resolve)=>{
 setTimeout(()=> {
-			 //document.getElementById("output").innerText=`Result: ${input}`;
-			resolve(Number(input.value));
+		resolve(Number(input.value));
 		},2000)//2second delay
 	});
     promise1.then((num)=>{
