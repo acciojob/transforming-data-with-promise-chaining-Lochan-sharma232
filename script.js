@@ -49,7 +49,7 @@ let myPromise=new Promise(function (resolve){
     setTimeout(()=>{
         let result=value+10;
         console.log(`Final Result: ${result}`);
-	        document.getElementById('output').innerText=`Result: ${value}`;
+	        document.getElementById('output').innerText=`Result: ${result}`;
         resolve(result);
     },1000)
    });
