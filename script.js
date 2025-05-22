@@ -1,16 +1,16 @@
 document.getElementById("btn").addEventListener("click",function(e){
-const input=parseInt(document.getElementById("ip").value);
+const input=parseFloat(document.getElementById("ip").value);
 if(isNaN(input)){
     alert("Please enter a valid number");
     return;
 }
 processInput(input)
 .then(result=>{
-    document.getElementById("output").innerHTML=`Result: ${result}`;
-})
+    document.getElementById("output").innerHTML=`Final Result: ${result}`;
+});
 });
 function processInput(number){
-let myPromise=new Promise(function (resolve){
+new Promise(function (resolve){
 		setTimeout(()=> {
 			console.log(`Result:${number}`);
 			resolve(number);
@@ -23,7 +23,7 @@ let myPromise=new Promise(function (resolve){
                 console.log(`Result:${number}`);
                 resolve(number);
             },2000);
-        })
+        });
 	})
 			.then((value)=>{
         return new Promise((resolve)=>{
@@ -40,7 +40,7 @@ let myPromise=new Promise(function (resolve){
             let number=value/2;
             console.log(`Result:${number}`);
             resolve(number);
-        },2000)
+        },1000);
     });
 })
 .then((value)=>{
@@ -53,4 +53,3 @@ let myPromise=new Promise(function (resolve){
    });
 });
 }
-processInput(10);
