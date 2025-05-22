@@ -9,46 +9,46 @@ processInput(input)
     document.getElementById("output").innerHTML=`Result: ${result}`;
 })
 });
-function processInput(input){
+function processInput(number){
 let myPromise=new Promise(function (resolve){
 		setTimeout(()=> {
-			console.log(`Result:${input}`);
-			resolve(input);
+			console.log(`Result:${number}`);
+			resolve(number);
 		},2000)//2second delay
 	})
     .then((value)=>{
         return new Promise((resolve)=>{
             setTimeout(()=>{
-                let result=value-2;
-                console.log(`Result:${result}`);
-                resolve(result);
+                let number=value-2;
+                console.log(`Result:${number}`);
+                resolve(number);
             },1000);
         })
     })
        .then((value)=>{
         return new Promise((resolve)=>{
             setTimeout(()=>{
-                let result=value-3;
-                console.log(`Result:${result}`);
-           resolve(result);
+                let number=value-3;
+                console.log(`Result:${number}`);
+           resolve(number);
             },2000)
        });
       })
 .then((value)=>{
     return new Promise((resolve)=>{
         setTimeout(()=>{
-            let result=value/2;
-            console.log(`Result:${result}`);
-            resolve(result);
+            let number=value/2;
+            console.log(`Result:${number}`);
+            resolve(number);
         },2000)
     });
 })
 .then((value)=>{
    return new Promise(resolve=>{
     setTimeout(()=>{
-        let result=value+10;
-        console.log(`Final Result: ${result}`);
-    resolve(result);
+        let number=value+10;
+        console.log(`Final Result: ${number}`);
+    resolve(number);
     },1000)
    });
 });
