@@ -19,19 +19,19 @@ let myPromise=new Promise(function (resolve){
     .then((value)=>{
         return new Promise((resolve)=>{
             setTimeout(()=>{
-                let number=value-2;
+                let number=value*2;
                 console.log(`Result:${number}`);
                 resolve(number);
-            },1000);
+            },2000);
         })
-    })
-       .then((value)=>{
+	})
+			.then((value)=>{
         return new Promise((resolve)=>{
             setTimeout(()=>{
                 let number=value-3;
                 console.log(`Result:${number}`);
            resolve(number);
-            },2000)
+            },1000)
        });
       })
 .then((value)=>{
