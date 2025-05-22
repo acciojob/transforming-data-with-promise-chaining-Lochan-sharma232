@@ -1,55 +1,56 @@
 document.getElementById("btn").addEventListener("click",function(e){
-const input=parseFloat(document.getElementById("ip").value);
+const input=parseInt(document.getElementById("ip").value);
 if(isNaN(input)){
     alert("Please enter a valid number");
     return;
 }
 processInput(input)
 .then(result=>{
-    document.getElementById("output").innerHTML=`Final Result: ${result}`;
+    document.getElementById("output").innerHTML=`Result: ${result}`;
+})
 });
-});
-function processInput(number){
-new Promise(function (resolve){
+function processInput(input){
+let myPromise=new Promise(function (resolve){
 		setTimeout(()=> {
-			console.log(`Result:${number}`);
-			resolve(number);
+			console.log(`Result:${input}`);
+			resolve(input);
 		},2000)//2second delay
 	})
-    .then(value=>{
+    .then((value)=>{
         return new Promise((resolve)=>{
             setTimeout(()=>{
-                let number=value*2;
-                console.log(`Result:${number}`);
-                resolve(number);
-            },2000);
-        });
-	})
-			.then(value=>{
+                let result=value-2;
+                console.log(`Result:${result}`);
+                resolve(result);
+            },1000);
+        })
+    })
+       .then((value)=>{
         return new Promise((resolve)=>{
             setTimeout(()=>{
-                let number=value-3;
-                console.log(`Result:${number}`);
-           resolve(number);
-            },1000)
+                let result=value-3;
+                console.log(`Result:${result}`);
+           resolve(result);
+            },2000)
        });
       })
-.then(value=>{
+.then((value)=>{
     return new Promise((resolve)=>{
         setTimeout(()=>{
-            let number=value/2;
-            console.log(`Result:${number}`);
-            resolve(number);
-        },1000);
+            let result=value/2;
+            console.log(`Result:${result}`);
+            resolve(result);
+        },2000)
     });
 })
-.then(value=>{
+.then((value)=>{
    return new Promise(resolve=>{
     setTimeout(()=>{
-        let number=value+10;
-        console.log(`Final Result: ${number}`);
-    resolve(number);
+        let result=value+10;
+        console.log(`Final Result: ${result}`);
+    resolve(result);
     },1000)
    });
 });
 }
+processInput(10);
