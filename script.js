@@ -9,7 +9,7 @@ setTimeout(()=> {
 		},2000)//2second delay
 	});
     promise1.then((num)=>{
-        output.textContent=`Result:${num}`;       
+        output.textContent=`Result: ${num}`;       
         return num;
     })
       
@@ -22,7 +22,7 @@ setTimeout(()=> {
     return promise2;
 })
     .then((num)=>{
-    output.textContent=`Result:${num}`;
+    output.textContent=`Result: ${num}`;
    return num;
     })
     .then((num)=>{
@@ -34,7 +34,7 @@ setTimeout(()=> {
 return promise3;
 })
     .then((num)=>{
-        output.textContent=`Result:${num}`;
+        output.textContent=`Result: ${num}`;
         return num;
     })
     .then((num)=>{
@@ -46,7 +46,7 @@ return promise3;
         return promise4;
     })
     .then((num)=>{
-        output.textContent=`Result:${num}`;
+        output.textContent=`Result: ${num}`;
         return num;
     })
     .then((num)=>{
